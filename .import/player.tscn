@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6w2n8nh2i7df"]
+
+[ext_resource type="Script" path="res://.import/player.gd" id="1_f1303"]
+[ext_resource type="PackedScene" uid="uid://xvlndfmc4qit" path="res://art/Main Monkey - VR.glb" id="1_lto7p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lto7p"]
+radius = 0.551784
+height = 2.26884
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_f1303")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" parent="Pivot" instance=ExtResource("1_lto7p")]
+transform = Transform3D(0.999627, 0, 0.027311, 0, 1, 0, -0.027311, 0, 0.999627, -0.0398865, -0.0065918, -0.10791)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.128778, 0, -0.991673, 0, 1, 0, 0.991673, 0, -0.128778, 0, 0.0557627, 0)
+shape = SubResource("CapsuleShape3D_lto7p")
